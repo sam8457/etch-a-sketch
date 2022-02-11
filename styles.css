@@ -1,50 +1,34 @@
 
+
 html, body{
     height: 100%; /* required for other elements to take up 100% of height */
     margin: 0;
     padding: 0;
+    background-color: lightgrey;
 }
 
-#page {
-    /* sets it to grid layout */
-    display: grid;
-
-    width: 100%; /* width of grid: 100% of container */
-    height: 100%;
-
-    /* Physical layout of page */
-    grid-template-areas:
-        "head head"
-        "nav main"
-        "nav foot"
-    ;
-
-    /* allocates space to 1st, 2nd, and 3rd rows */
-    grid-template-rows: 50px 1fr 30px;
-
-    /* same but with columns */
-    grid-template-columns: 150px 1fr;
-    /* fr specifies fractions of remaining space after px specifiers
-    are already subtracted out of it, in this case with just 1
-    it gets everything remaining */
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
 }
 
-#page > header {
-    grid-area: head;
-    background-color: lightblue;
+button {
+    font-size: 3em;
 }
 
-#page > nav {
-    grid-area: nav;
-    background-color: tomato;
+.square {
+    background-color: grey;
+    height: 1fr;
+    width: 1fr;
+    border: 1px solid black;
 }
 
-#page > main {
-    grid-area: main;
-    background-color: lightgoldenrodyellow;
-}
-
-#page > footer {
-    grid-area: foot;
-    background-color: lightgreen;
+.container {
+    display: grid; 
+    /* height: 100%; */
+    height: 50em;
+    width: 50em;
+    aspect-ratio: 1;
 }
